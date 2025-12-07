@@ -24,11 +24,10 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
     <table class="table">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Categoria</th>
+                <th>Anuidade</th>
                 <th>Preço</th>
-                <th>Estoque</th>
                 <th>Status</th>
+                <th>Pagar</th>
             </tr>
         </thead>
         
@@ -45,8 +44,8 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                 <?php foreach($produtos as $produto): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($produto['nome']); ?></td>
-                    <td><?php echo htmlspecialchars($produto['categoria']); ?></td>
                     <td class="fw-bold">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></td>
+                    <td><?php echo htmlspecialchars($produto['categoria']); ?></td>
                     <td><?php echo $produto['estoque']; ?></td>
                     <td>
                         <?php if($produto['estoque'] > 0): ?>
